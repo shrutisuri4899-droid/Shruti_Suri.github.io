@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shruti Suri | Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F8F6F2;--white:#FFFFFF;--dark:#1A1A1A;--accent:#B5984E;
+  --muted:#888880;--surface:#EEEAE4;--border:#DDD9D1;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);font-family:var(--font-body);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px);background:rgba(248,246,242,0.92);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-display);font-size:1.8rem;font-weight:600;letter-spacing:2px;color:var(--dark)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:var(--font-body);font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--dark)}
+
+#hero{min-height:100vh;display:flex;align-items:center;padding:7rem 3rem 4rem;position:relative;overflow:hidden;background:var(--bg)}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.25;animation:float 10s ease-in-out infinite}
+.b1{width:600px;height:600px;background:#D4B896;top:-150px;right:-150px;animation-delay:0s}
+.b2{width:400px;height:400px;background:#C9A96E;bottom:-100px;left:-100px;animation-delay:3s}
+.b3{width:300px;height:300px;background:#E8DDD0;top:40%;right:20%;animation-delay:6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-25px)}}
+.hero-inner{position:relative;z-index:2;max-width:900px}
+.hero-tag{display:inline-flex;align-items:center;gap:0.6rem;background:transparent;color:var(--muted);padding:0 0 1.5rem;font-family:var(--font-body);font-size:0.75rem;font-weight:500;text-transform:uppercase;letter-spacing:3px}
+.hero-tag::before{content:'—';color:var(--accent)}
+h1.hero-name{font-family:var(--font-display);font-size:clamp(5rem,11vw,9.5rem);line-height:0.88;letter-spacing:2px;color:var(--dark);margin-bottom:0.6rem;font-weight:600}
+h1.hero-name .outline{-webkit-text-stroke:2px var(--dark);color:transparent}
+.hero-sub{font-family:var(--font-body);font-size:0.8rem;font-weight:500;color:var(--muted);letter-spacing:3px;margin-bottom:2rem;text-transform:uppercase}
+.hero-desc{font-size:1.1rem;font-weight:300;color:var(--dark);max-width:520px;line-height:1.8;margin-bottom:2.5rem;opacity:0.85}
+.hero-chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:3rem}
+.chip{padding:0.45rem 1.1rem;border-radius:2px;font-family:var(--font-body);font-size:0.75rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);background:var(--white);transition:all 0.2s}
+.chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{padding:0.9rem 2.2rem;border-radius:2px;font-family:var(--font-body);font-size:0.75rem;font-weight:600;text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:all 0.25s;display:inline-block}
+.btn-primary{background:var(--dark);color:var(--bg);border:1px solid var(--dark)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--dark);border:1px solid var(--dark)}
+.btn-outline:hover{background:var(--surface);transform:translateY(-2px)}
+
+.stats-strip{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem}
+.stat{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:2.8rem;color:var(--accent);letter-spacing:1px;display:block;font-weight:400}
+.stat-label{font-family:var(--font-body);font-size:0.68rem;font-weight:500;color:rgba(248,246,242,0.4);text-transform:uppercase;letter-spacing:2px;margin-top:0.3rem}
+
+section{padding:5rem 3rem}
+.section-tag{display:inline-flex;align-items:center;gap:0.8rem;font-family:var(--font-body);font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;margin-bottom:1rem;color:var(--muted)}
+.section-tag::before{content:'';width:30px;height:1px;background:var(--accent);display:inline-block}
+h2.section-title{font-family:var(--font-display);font-size:clamp(3rem,6vw,5.5rem);letter-spacing:1px;line-height:0.9;margin-bottom:1rem;font-weight:500}
+
+#projects{background:var(--bg)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.project-card{border-radius:0;padding:2rem;position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;border:1px solid var(--border);background:var(--white)}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(26,26,26,0.08);border-color:var(--accent)}
+.pc-number{font-family:var(--font-display);font-size:5rem;color:var(--dark);opacity:0.05;position:absolute;top:-10px;right:20px;line-height:1;pointer-events:none;font-weight:600}
+.pc-type{font-family:var(--font-body);font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.8rem;color:var(--accent)}
+.pc-name{font-family:var(--font-display);font-size:2.6rem;letter-spacing:1px;margin-bottom:0.3rem;line-height:1;color:var(--dark);font-weight:600}
+.pc-sub{font-family:var(--font-body);font-size:0.72rem;font-weight:400;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem;color:var(--muted)}
+.pc-divider{width:30px;height:1px;background:var(--accent);margin-bottom:1.5rem}
+.pc-highlights{list-style:none;margin-bottom:1.8rem}
+.pc-highlights li{font-size:0.88rem;font-weight:300;padding:0.4rem 0;padding-left:1.2rem;position:relative;line-height:1.6;color:var(--dark);border-bottom:1px solid var(--border)}
+.pc-highlights li:last-child{border-bottom:none}
+.pc-highlights li::before{content:'—';position:absolute;left:0;color:var(--accent);font-weight:400}
+.pc-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.pc-tag{padding:0.3rem 0.8rem;border-radius:2px;font-size:0.68rem;font-family:var(--font-body);font-weight:500;letter-spacing:1px;text-transform:uppercase;background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+
+#about{padding:5rem 3rem;background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:2rem}
+.about-text p{font-size:1rem;font-weight:300;line-height:1.9;color:var(--dark);margin-bottom:1.4rem;opacity:0.85}
+.about-text .highlight{font-weight:600;color:var(--dark)}
+.about-vibes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem}
+.vibe-card{padding:1.5rem;border:1px solid var(--border);background:var(--bg);text-align:center}
+.vibe-card .vibe-icon{font-size:1.5rem;margin-bottom:0.6rem;display:block}
+.vibe-card .vibe-label{font-family:var(--font-body);font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--muted)}
+
+#experience{background:var(--surface)}
+.exp-intro{max-width:550px;font-size:1rem;font-weight:300;line-height:1.8;color:var(--muted);margin-bottom:3rem}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2rem;padding:2rem;background:var(--white);border:1px solid var(--border);transition:border-color 0.2s,transform 0.2s}
+.tl-item:hover{border-color:var(--accent);transform:translateX(4px)}
+.tl-dot{position:absolute;left:-2.4rem;top:2.2rem;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-period{font-family:var(--font-body);font-size:0.68rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+.tl-role{font-family:var(--font-display);font-size:1.5rem;font-weight:600;margin-bottom:0.2rem;color:var(--dark)}
+.tl-company{font-family:var(--font-body);font-size:0.78rem;font-weight:500;margin-bottom:1.2rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px}
+.tl-bullets{list-style:none}
+.tl-bullets li{font-size:0.88rem;font-weight:300;padding:0.3rem 0;padding-left:1.2rem;position:relative;color:var(--dark);line-height:1.6;border-bottom:1px solid var(--border)}
+.tl-bullets li:last-child{border-bottom:none}
+.tl-bullets li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+.highlight-num{font-weight:600;color:var(--dark)}
+
+#skills{background:var(--dark);color:var(--bg)}
+#skills .section-tag{color:rgba(248,246,242,0.4)}
+#skills .section-tag::before{background:var(--accent)}
+#skills h2.section-title{color:var(--bg)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3rem}
+.skill-cat{background:rgba(248,246,242,0.04);border:1px solid rgba(248,246,242,0.08);padding:1.8rem}
+.skill-cat h3{font-family:var(--font-body);font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;margin-bottom:1.2rem;color:rgba(248,246,242,0.35)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.6rem}
+.stag{padding:0.4rem 1rem;border-radius:2px;font-family:var(--font-body);font-size:0.75rem;font-weight:400;letter-spacing:0.5px;background:rgba(248,246,242,0.06);color:rgba(248,246,242,0.75);border:1px solid rgba(248,246,242,0.1)}
+.cert-bar{margin-top:3rem;border-top:1px solid rgba(248,246,242,0.08);padding-top:2rem}
+.cert-bar h3{font-family:var(--font-body);font-size:0.68rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;margin-bottom:1.2rem;color:rgba(248,246,242,0.35)}
+.certs{display:flex;flex-wrap:wrap;gap:1rem}
+.cert{display:flex;align-items:center;gap:0.7rem;padding:0.8rem 1.4rem;background:rgba(248,246,242,0.04);border:1px solid rgba(248,246,242,0.08);font-size:0.82rem;font-weight:300;color:rgba(248,246,242,0.7)}
+.cert-icon{color:var(--accent)}
+
+#contact{padding:7rem 3rem;text-align:center;background:var(--bg);position:relative;overflow:hidden}
+.contact-blob1{position:absolute;width:500px;height:500px;background:#D4B896;border-radius:50%;filter:blur(140px);opacity:0.18;top:-150px;left:-150px}
+.contact-blob2{position:absolute;width:400px;height:400px;background:#C9A96E;border-radius:50%;filter:blur(140px);opacity:0.15;bottom:-100px;right:-100px}
+.contact-inner{position:relative;z-index:2}
+.contact-tag{font-family:var(--font-body);font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:3px;color:var(--muted);margin-bottom:1.5rem}
+.contact-title{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);line-height:0.9;letter-spacing:2px;margin-bottom:1.5rem;font-weight:500}
+.contact-title span{color:var(--accent)}
+.contact-sub{font-size:0.95rem;font-weight:300;color:var(--muted);max-width:450px;margin:0 auto 2.5rem;line-height:1.8}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.contact-link{display:flex;align-items:center;gap:0.6rem;padding:0.9rem 2rem;border-radius:2px;font-family:var(--font-body);font-size:0.75rem;font-weight:600;text-decoration:none;letter-spacing:2px;transition:all 0.2s;text-transform:uppercase}
+.cl-email{background:var(--dark);color:var(--bg);border:1px solid var(--dark)}
+.cl-email:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.cl-linkedin{background:transparent;color:var(--dark);border:1px solid var(--dark)}
+.cl-linkedin:hover{background:var(--surface);transform:translateY(-2px)}
+.footer-note{font-family:var(--font-body);font-size:0.68rem;font-weight:400;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-top:4rem;opacity:0.5}
+
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:0.1s}.delay-2{transition-delay:0.2s}.delay-3{transition-delay:0.3s}.delay-4{transition-delay:0.4s}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  section,#hero{padding:4rem 1.5rem}
+  #hero{padding-top:6rem}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .stats-strip{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">S<span>S</span></div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
+  <div class="hero-blob b4"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">📍 Lille, France · Available from July 2026</div>
+    <h1 class="hero-name">SHRUTI<br><span class="outline">SURI</span></h1>
+    <p class="hero-sub">MSc Marketing Management · EDHEC Business School</p>
+    <p class="hero-desc">Strategic thinker. Brand storyteller. Fluent in campaigns, consumer insights, and creative problem-solving.</p>
+    <div class="hero-chips">
+      <span class="chip c1">Brand Strategy</span>
+      <span class="chip c2">Digital Marketing</span>
+      <span class="chip c3">Social Media</span>
+      <span class="chip c4">Multicultural Mindset</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">See My Work</a>
+      <a href="#contact" class="btn btn-outline">Let's Connect</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat"><span class="stat-num">+500%</span><span class="stat-label">Reel views grown</span></div>
+  <div class="stat"><span class="stat-num">+33%</span><span class="stat-label">IG followers grown</span></div>
+  <div class="stat"><span class="stat-num">4</span><span class="stat-label">Major brand projects</span></div>
+  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Languages spoken</span></div>
+  <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Presentations delivered</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">Who I am</div>
+  <h2 class="section-title">THE PERSON<br>BEHIND THE PITCH</h2>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a <span class="highlight">MSc Marketing Management student at EDHEC Business School</span> with a background in Sociology — which basically means I'm obsessed with understanding why people do what they do, and then turning that into strategy.</p>
+      <p>I thrive in multicultural environments — I've worked across India and France, and collaborated with teams from 6+ nationalities at EDHEC. I bring calm to ambiguity and genuine curiosity to every brief. My Sociology background taught me to ask better questions before jumping to answers, which makes me the kind of marketer who actually listens before building strategy.</p>
+
+    </div>
+    <div class="about-vibes fade-up delay-2">
+      <div class="vibe-card v1"><span class="vibe-icon">🎯</span><span class="vibe-label">Strategy-First</span></div>
+      <div class="vibe-card v2"><span class="vibe-icon">🎯</span><span class="vibe-label">Data-Driven</span></div>
+      <div class="vibe-card v3"><span class="vibe-icon">😄</span><span class="vibe-label">Witty & Authentic</span></div>
+      <div class="vibe-card v4"><span class="vibe-icon">💡</span><span class="vibe-label">Creative Thinker</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-tag">Featured Work</div>
+  <h2 class="section-title">FEATURED<br>PROJECTS</h2>
+  <div class="projects-grid">
+
+    <!-- Carrefour -->
+    <div class="project-card fade-up">
+      <div class="pc-number">01</div>
+      <div class="pc-type pc-accent">EDHEC Challenge · Brand Strategy</div>
+      <h3 class="pc-name">CARREFOUR</h3>
+      <p class="pc-sub">360° Communication Strategy · France</p>
+      <ul class="pc-highlights">
+        <li>Conceptualized <strong>FUNCTION+</strong>, a first-of-its-kind benefit-driven wellness concept for Carrefour's 14,000+ stores — positioning them as a functional nutrition leader</li>
+        <li>Built full 360° omnichannel plan (in-store pop-ups, TikTok/IG, website, newsletter) using the <strong>DAGMAR model</strong> with 4 SMART objectives</li>
+        <li>Conducted competitor analysis (Leclerc, Auchan, Super U) and segmented 3 consumer personas: Wellness Maximalist, Health Traditionalist, Fitness Obsessed</li>
+        <li>Consumer pre-test validated: <strong>80% awareness uplift</strong> & <strong>90% comprehension rate</strong></li>
+      </ul>
+      <div class="pc-tags">
+        <span class="pc-tag">Brand Strategy</span>
+        <span class="pc-tag">360° Comms</span>
+        <span class="pc-tag">Consumer Research</span>
+        <span class="pc-tag">DAGMAR</span>
+        <span class="pc-tag">Social Media</span>
+      </div>
+    </div>
+
+    <!-- Lacoste -->
+    <div class="project-card fade-up delay-1">
+      <div class="pc-number">02</div>
+      <div class="pc-type pc-accent">International Marketing · China Expansion</div>
+      <h3 class="pc-name">LACOSTE</h3>
+      <p class="pc-sub">International Marketing Strategy · China</p>
+      <ul class="pc-highlights">
+        <li>Identified <strong>China</strong> as the #1 expansion market through rigorous etic analysis across 5 global regions — backed by GDP, digital maturity & luxury index data</li>
+        <li>Conducted <strong>6 in-depth laddering interviews</strong> with Chinese Gen Z consumers (ages 22–29) to map cultural motivations via Hierarchical Value Map</li>
+        <li>Discovered key insight: Lacoste perceived as "too masculine" by female Gen Z — led to recommendations for feminized lines and cultural localization</li>
+        <li>Developed full <strong>4Ps marketing mix</strong> + MECCAS advertising framework targeting Premium Lifestyle Enthusiasts & Culture-Forward Trend Seekers</li>
+      </ul>
+      <div class="pc-tags">
+        <span class="pc-tag">International Strategy</span>
+        <span class="pc-tag">Qualitative Research</span>
+        <span class="pc-tag">Consumer Laddering</span>
+        <span class="pc-tag">4Ps Framework</span>
+        <span class="pc-tag">Emic/Etic Analysis</span>
+      </div>
+    </div>
+
+    <!-- CréaWine -->
+    <div class="project-card fade-up delay-2">
+      <div class="pc-number">03</div>
+      <div class="pc-type pc-accent">Market Expansion · UK Entry Strategy</div>
+      <h3 class="pc-name">CRÉAWINE</h3>
+      <p class="pc-sub">UK Market Expansion Strategy · Wine Industry</p>
+      <ul class="pc-highlights">
+        <li>Assisting a French wine brand with its full UK market entry strategy from scratch</li>
+        <li>Conducted deep-dive <strong>market research</strong> on UK wine consumption trends, post-Brexit trade dynamics, and premium wine positioning</li>
+        <li>Performed <strong>competitor analysis</strong> and internal benchmarking to identify white space and sustainable differentiation opportunities</li>
+        <li>Delivered data-driven strategic recommendations aligned with the brand's identity and export ambitions</li>
+      </ul>
+      <div class="pc-tags">
+        <span class="pc-tag">Market Research</span>
+        <span class="pc-tag">Competitor Analysis</span>
+        <span class="pc-tag">Market Entry</span>
+        <span class="pc-tag">Benchmarking</span>
+        <span class="pc-tag">Data Analysis</span>
+      </div>
+    </div>
+
+    <!-- Danone -->
+    <div class="project-card fade-up delay-3">
+      <div class="pc-number">04</div>
+      <div class="pc-type pc-accent">New Product Development · FMCG</div>
+      <h3 class="pc-name">DANONE</h3>
+      <p class="pc-sub">Product Innovation & Go-to-Market Strategy</p>
+      <ul class="pc-highlights">
+        <li>Developed a <strong>new product concept</strong> within the Danone portfolio, identifying a gap in the functional food/nutrition space</li>
+        <li>Ran <strong>A/B testing</strong> for product concept validation and iterated based on consumer feedback</li>
+        <li>Built the complete <strong>go-to-market strategy</strong>: target audience, pricing, channel strategy, and launch communications</li>
+        <li>Presented final recommendations aligned with Danone's health mission and innovation pipeline</li>
+      </ul>
+      <div class="pc-tags">
+        <span class="pc-tag">Product Development</span>
+        <span class="pc-tag">A/B Testing</span>
+        <span class="pc-tag">GTM Strategy</span>
+        <span class="pc-tag">FMCG</span>
+        <span class="pc-tag">Consumer Insights</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-tag">Career Journey</div>
+  <h2 class="section-title">EXPERIENCE<br>& IMPACT</h2>
+  <p class="exp-intro fade-up">From market research in Delhi to brand strategy in Lille — here's the story of how I got here, with receipts.</p>
+  <div class="timeline">
+
+    <div class="tl-item fade-up">
+      <div class="tl-dot tl-d1" style="background:var(--coral)"></div>
+      <div class="tl-period">Feb 2025 — May 2025 · Delhi (Remote)</div>
+      <div class="tl-role">Marketing Intern</div>
+      <div class="tl-company">Netilly Digital Pvt. Ltd.</div>
+      <ul class="tl-bullets">
+        <li>Managed social media accounts end-to-end — built content calendars, created visuals, grew <span class="highlight-num">Instagram followers by 33%</span>, <span class="highlight-num">YouTube subscribers by 25%</span>, and reel views by a jaw-dropping <span class="highlight-num">500%</span></li>
+        <li>Implemented SEO strategies for Etsy listings, boosting brand visibility by <span class="highlight-num">15%</span></li>
+        <li>Optimized image alt tags across web assets, increasing organic traffic CTR by over <span class="highlight-num">10%</span></li>
+        <li>Conducted competitor research to inform strategic decisions across multiple client projects</li>
+      </ul>
+    </div>
+
+    <div class="tl-item fade-up delay-1">
+      <div class="tl-dot tl-d2" style="background:var(--purple)"></div>
+      <div class="tl-period">Jan 2023 — Jul 2024 · Noida, India</div>
+      <div class="tl-role">Assistant HR Coordinator</div>
+      <div class="tl-company">Innthink Technologies Pvt. Ltd.</div>
+      <ul class="tl-bullets">
+        <li>Managed recruitment and onboarding for <span class="highlight-num">5+ roles</span>, ensuring a brand-aligned employee experience from day one</li>
+        <li>Maintained employee records, attendance, and payroll for <span class="highlight-num">60+ staff</span></li>
+        <li>Drove engagement initiatives and performance tracking across departments</li>
+      </ul>
+    </div>
+
+    <div class="tl-item fade-up delay-2">
+      <div class="tl-dot tl-d3" style="background:var(--mint)"></div>
+      <div class="tl-period">Jun 2022 — Dec 2022 · Noida, India (Remote)</div>
+      <div class="tl-role">Marketing Research Intern</div>
+      <div class="tl-company">Atlas Shipping Services Pvt. Ltd.</div>
+      <ul class="tl-bullets">
+        <li>Analyzed market and shipping data to deliver strategic marketing insights</li>
+        <li>Prepared <span class="highlight-num">10+ presentations</span> summarizing research for faster, data-driven decisions</li>
+        <li>Streamlined data consolidation, cutting strategy meeting prep time by <span class="highlight-num">20%</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-tag">Arsenal</div>
+  <h2 class="section-title">TOOLS</h2>
+  <div class="skills-grid">
+    <div class="skill-cat fade-up">
+      <h3>Analytics & Data</h3>
+      <div class="skill-tags">
+        <span class="stag yellow">Power BI</span>
+        <span class="stag yellow">SPSS</span>
+        <span class="stag yellow">Tableau</span>
+        <span class="stag yellow">MS Office Suite</span>
+        <span class="stag yellow">CRM · Salesforce Management</span>
+      </div>
+    </div>
+    <div class="skill-cat fade-up delay-1">
+      <h3>Digital Marketing</h3>
+      <div class="skill-tags">
+        <span class="stag mint">Google Ads</span>
+        <span class="stag mint">Semrush</span>
+        <span class="stag mint">SEO / SEM</span>
+        <span class="stag mint">Content Strategy</span>
+        <span class="stag mint">Social Media Mgmt</span>
+      </div>
+    </div>
+    <div class="skill-cat fade-up delay-2">
+      <h3>Strategy & Research</h3>
+      <div class="skill-tags">
+        <span class="stag pink">Brand Strategy</span>
+        <span class="stag pink">Market Research</span>
+        <span class="stag pink">Consumer Interviews</span>
+        <span class="stag pink">Competitor Analysis</span>
+        <span class="stag pink">GTM Planning</span>
+      </div>
+    </div>
+    <div class="skill-cat fade-up delay-3">
+      <h3>Languages</h3>
+      <div class="skill-tags">
+        <span class="stag coral">English (C2)</span>
+        <span class="stag coral">Hindi (C2)</span>
+        <span class="stag blue">French (A2)</span>
+      </div>
+    </div>
+  </div>
+  <div class="cert-bar fade-up">
+    <h3>Certifications</h3>
+    <div class="certs">
+      <div class="cert"><span class="cert-icon">🎓</span>Google — Foundations of Digital Marketing & E-Commerce</div>
+      <div class="cert"><span class="cert-icon">🔷</span>Microsoft — Power Platform Fundamentals</div>
+      <div class="cert"><span class="cert-icon">💼</span>Microsoft — Dynamics 365 Fundamentals CRM</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-blob1"></div>
+  <div class="contact-blob2"></div>
+  <div class="contact-inner fade-up">
+    <p class="contact-tag">Available from July 2026 · 4–6 month internship</p>
+    <h2 class="contact-title">LET'S BUILD<br>SOMETHING <span>REAL</span></h2>
+    <p class="contact-sub">Looking for a 4–6 month marketing internship in digital, brand strategy, or communications. Based in Lille, open to France & Europe.</p>
+    <div class="contact-links">
+      <a href="mailto:shruti.suri@edhec.com" class="contact-link cl-email">📧 shruti.suri@edhec.com</a>
+      <a href="https://www.linkedin.com/in/shruti-suri-a702702b2" target="_blank" class="contact-link cl-linkedin">🔗 LinkedIn Profile</a>
+    </div>
+    <p class="footer-note">Crafted with strategy & a whole lot of curiosity · Shruti Suri © 2026</p>
+  </div>
+</section>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
